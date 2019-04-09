@@ -47,7 +47,7 @@ MonoBehaviour:
   OnBeginTracking:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: BeginTrackingEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    m_TypeName: ARImages.BeginTrackingEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!1001 &3847746066284377324
 PrefabInstance:

@@ -35,9 +35,8 @@ namespace ARImages
         public void Update()
         {
             anchor.UpdateTransform();
-            //not needed because we updated the transform
-            //rootObject.transform.position = UnityARMatrixOps.GetPosition(anchor.GetMatrixTransform());
-            //rootObject.transform.rotation = UnityARMatrixOps.GetRotation(anchor.GetMatrixTransform());
+            rootObject.transform.position = anchor.GetTransform().position;
+            rootObject.transform.rotation = anchor.GetTransform().rotation;
         }
 
         public void Remove()
