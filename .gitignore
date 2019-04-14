@@ -36,3 +36,5 @@ sysinfo.txt
 *.unitypackage
 
 /ProjectSettings/ProjectSettings.asset
+
+!coreAndKitImages.unitypackage
