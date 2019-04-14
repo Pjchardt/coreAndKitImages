@@ -64,7 +64,7 @@ namespace ARImages
                     //{
                     //    imageAnchorGO.SetActive(true);
                     //}
-                    ImageCollection[i].Update();
+                    ImageCollection[i].ProcessTracking();
                     //}
                     //else if (imageAnchorGO.activeSelf)
                     //{

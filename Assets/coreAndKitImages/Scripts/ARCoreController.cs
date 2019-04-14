@@ -31,8 +31,11 @@ namespace ARImages
             // Get updated augmented images for this frame.
             Session.GetTrackables<AugmentedImage>(m_TempAugmentedImages, TrackableQueryFilter.Updated);
 
+            DebugManager.Instance.Print("Number updated images:" + m_TempAugmentedImages.Count.ToString());
+
             foreach (var image in m_TempAugmentedImages)
             {
+                
                 //sanity check, if our image is greater than our collection, skip
                 if (image.DatabaseIndex >= ImageCollection.Length)
                 {

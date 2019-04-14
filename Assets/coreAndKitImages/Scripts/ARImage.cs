@@ -14,14 +14,22 @@ namespace ARImages
         private ARImageViz rootObject;
         ARAnchor anchor;
 
-        public void ProcessTracking()
-        {
-            //do stuff
-        }
-
         public bool GetIsActive()
         {
             return rootObject != null;
+        }
+
+        public void ProcessTracking()
+        {
+            anchor.UpdateTransform();
+            rootObject.transform.position = anchor.GetTransform().position;
+            rootObject.transform.rotation = anchor.GetTransform().rotation;
+        }
+
+        public void ProcessTracking(Pose p)
+        {
+            anchor.UpdateAnchor(p);
+            anchor.UpdateTransform();
         }
 
         public void Add(ARAnchor a)
@@ -30,13 +38,6 @@ namespace ARImages
             anchor = a;
             rootObject = (ARImageViz)GameObject.Instantiate(Prefab, anchor.GetTransform());
             rootObject.BeginTracking();
-        }
-
-        public void Update()
-        {
-            anchor.UpdateTransform();
-            rootObject.transform.position = anchor.GetTransform().position;
-            rootObject.transform.rotation = anchor.GetTransform().rotation;
         }
 
         public void Remove()

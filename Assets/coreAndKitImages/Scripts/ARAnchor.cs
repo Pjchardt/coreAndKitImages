@@ -25,6 +25,12 @@ namespace ARImages
             CreateTransform();
         }
 
+        public void UpdateAnchor(Pose p)
+        {
+            arCoreAnchor.transform.position = p.position;
+            arCoreAnchor.transform.rotation = p.rotation;
+        }
+
         void CreateTransform()
         {
             t = new GameObject("arAnchor").transform;
